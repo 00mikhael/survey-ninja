@@ -1,6 +1,6 @@
 # survey-ninja
 
-### Survey, But Like A Ninja
+### Survey, like a ninja
 
 <!-- ## Screenshots
 
