@@ -1,0 +1,15 @@
+{
+    "short_name": "Posty",
+    "name": "Posty is a web application built to simulate a multi-user blogging platform",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512 192x192 64x64 32x32 24x24 16x16"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#805ad5",
+    "background_color": "#ffffff"
+}
