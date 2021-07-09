@@ -2,9 +2,9 @@
 
 ### Survey, like a ninja
 
-<!-- ## Screenshots
+## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/00mikhael/foddi-page/main/raw/screenshot.png) -->
+![App Screenshot](https://pbs.twimg.com/media/E54GQX_WQAcbHdT?format=jpg&name=large)
 
 ## Run Locally
 
