@@ -6,7 +6,7 @@ const Base = ({ className, children }) => {
             style={{
                 backgroundImage: `url(${PatternBG})`
             }}
-            className={`${className} h-screen bg-no-repeat bg-center bg-cover opacity-100 bg-rose-500`}
+            className={`${className} max-h-screen min-h-screen bg-no-repeat bg-center bg-cover opacity-100 bg-rose-500`}
         >
             {children}
         </div>

@@ -1,16 +1,11 @@
 // import { Route } from 'react-router-dom'
 
-// import ResponseList from '../fragments/ResponseList'
-// import ResponseDetail from '../fragments/ResponseDetail'
-// import OptionsList from '../fragments/OptionsList'
-
-// import { FiArrowLeft } from 'react-icons/fi'
-
-// import { homeData as data } from '../../appData'
+import OptionsList from '../fragments/OptionsList'
 
 const Main = ({ className }) => {
     return (
         <main className={className}>
+            <OptionsList />
             {/* <Route exact path={['/', '/posts']} component={Home} />
             <Route exact path={'/posts/:id'} component={Detail} />
             <Route exact path={'/dashboard'} component={Dashboard} />

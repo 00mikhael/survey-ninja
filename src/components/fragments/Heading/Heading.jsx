@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Heading = ({ title, subtitle, size }) => {
+const Heading = ({ title, subtitle, size, className }) => {
     return (
-        <div className={`flex flex-col`}>
+        <div className={`${className} flex flex-col`}>
             <span
                 className={`${
                     size === 3
