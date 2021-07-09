@@ -8,7 +8,9 @@ import Nav from '../fragments/Nav'
 
 const Header = ({ className }) => {
     return (
-        <header className={`${className} flex space-x-4 justify-between p-4`}>
+        <header
+            className={`${className} flex space-x-4 justify-between px-4 py-6`}
+        >
             <Logo text={appData.name} />
             <Nav navItems={navData.navItems} />
         </header>

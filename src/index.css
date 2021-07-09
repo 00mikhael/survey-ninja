@@ -7,6 +7,6 @@ body {
     font-family: 'Poppins';
 }
 
-.transition_all {
+* {
     transition: all 0.25s;
 }
