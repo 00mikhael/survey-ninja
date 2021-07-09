@@ -1,11 +1,15 @@
 import React from 'react'
 import FadeIn from 'react-fade-in/lib/FadeIn'
 
+import { useSelector } from 'react-redux'
+
 import { responsesData as resData } from '../../../appData'
 import Heading from '../../fragments/Heading'
 import InputBox from '../../fragments/InputBox'
 
 const Responses = () => {
+    const quizzes = useSelector(state => state.quizzes)
+    console.log(quizzes)
     return (
         <React.Fragment>
             <FadeIn className={`mt-16 mb-8 mx-6`}>

@@ -2,13 +2,16 @@ import React from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import FadeIn from 'react-fade-in/lib/FadeIn'
 
+import { useSelector } from 'react-redux'
+
 import Question from '../../fragments/Question'
 import OptionsList from '../../fragments/OptionsList'
 import Button from '../../fragments/Button'
 
-import { mockQuizData, quizData, icons } from '../../../appData'
+import { quizData, icons } from '../../../appData'
 
 const Quiz = () => {
+    const quizzes = useSelector(state => state.quizzes)
     const { idx } = useParams()
     const history = useHistory()
     const [currentQuestion, setCurrentQuestion] = React.useState({
@@ -17,22 +20,22 @@ const Quiz = () => {
     })
 
     React.useEffect(() => {
-        if (!idx && mockQuizData) {
+        if (!idx && quizzes) {
             setCurrentQuestion({
                 index: 0,
-                data: mockQuizData.results[0]
+                data: quizzes[0]
             })
         }
-        if (idx && mockQuizData.results[idx]) {
+        if (idx && quizzes[idx]) {
             setCurrentQuestion({
                 index: idx,
-                data: mockQuizData.results[idx]
+                data: quizzes[idx]
             })
-        }
+        } // eslint-disable-next-line
     }, [idx])
 
     const handleButtonClick = () => {
-        if (Number(currentQuestion.index) === mockQuizData.results.length - 1) {
+        if (Number(currentQuestion.index) === quizzes.length - 1) {
             console.log('here')
             history.push(`/quiz/result/ninja`)
         } else {
@@ -61,8 +64,7 @@ const Quiz = () => {
 
             <Button
                 text={
-                    Number(currentQuestion.index) !==
-                    mockQuizData.results.length - 1
+                    Number(currentQuestion.index) !== quizzes.length - 1
                         ? quizData.main.nextButtonText
                         : quizData.main.submitButtonText
                 }

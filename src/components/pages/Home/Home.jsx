@@ -2,6 +2,9 @@ import React from 'react'
 import { Route, useHistory } from 'react-router-dom'
 import FadeIn from 'react-fade-in/lib/FadeIn'
 
+import { useDispatch } from 'react-redux'
+import { retrieveQuizzes } from '../../../actions/quiz'
+
 import { homeData, icons } from '../../../appData'
 import Heading from '../../fragments/Heading'
 import InputBox from '../../fragments/InputBox'
@@ -10,6 +13,13 @@ import Button from '../../fragments/Button'
 
 const Home = () => {
     const history = useHistory()
+    const dispatch = useDispatch()
+
+    React.useEffect(() => {
+        dispatch(retrieveQuizzes())
+        // eslint-disable-next-line
+    }, [])
+
     return (
         <React.Fragment>
             <Route exact path={['/', '/home']}>
