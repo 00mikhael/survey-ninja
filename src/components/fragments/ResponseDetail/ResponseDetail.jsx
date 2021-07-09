@@ -4,6 +4,7 @@ const ResponseDetail = () => {
     return <div />
 }
 
-const NinjaResponseList = () => {}
+// eslint-disable-next-line
+// const NinjaResponseList = () => {}
 
 export default ResponseDetail

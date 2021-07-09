@@ -21,12 +21,10 @@ export const retrieveResponses = () => async dispatch => {
         const res = await ResponseService.retrieveAll()
         dispatch({
             type: RETRIEVE_RESPONSES,
-            payload: res.data.posts
+            payload: res.data.responseList
         })
-
-        return Promise.resolve(res)
     } catch (err) {
-        return Promise.reject(err)
+        console.log(err)
     }
 }
 

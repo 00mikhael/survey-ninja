@@ -1,6 +1,6 @@
 {
-    "short_name": "Posty",
-    "name": "Posty is a web application built to simulate a multi-user blogging platform",
+    "short_name": "Survey Ninja",
+    "name": "Survey, like a ninja",
     "icons": [
         {
             "src": "favicon.svg",
@@ -10,6 +10,6 @@
     ],
     "start_url": ".",
     "display": "standalone",
-    "theme_color": "#805ad5",
+    "theme_color": "#EA3A60",
     "background_color": "#ffffff"
 }

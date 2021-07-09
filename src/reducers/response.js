@@ -1,4 +1,8 @@
-import { SAVE_RESPONSE, RETRIEVE_RESPONSES, RETRIEVE_RESPONSE } from '../actions/type'
+import {
+    SAVE_RESPONSE,
+    RETRIEVE_RESPONSES,
+    RETRIEVE_RESPONSE
+} from '../actions/type'
 
 const initialState = null
 
