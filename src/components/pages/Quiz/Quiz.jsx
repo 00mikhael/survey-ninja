@@ -42,9 +42,14 @@ const Quiz = () => {
     }
 
     return (
-        <FadeIn className={`max-w-lg mt-16 mb-8 mx-6 sm:mx-auto space-y-8`}>
+        <FadeIn
+            className={`max-w-lg mt-16 mb-8 mx-6 sm:mx-auto space-y-8 transition_all`}
+        >
             {currentQuestion.data && (
-                <Question text={currentQuestion.data.question} />
+                <Question
+                    text={currentQuestion.data.question}
+                    number={Number(currentQuestion.index) + 1}
+                />
             )}
             {currentQuestion.data && (
                 <OptionsList

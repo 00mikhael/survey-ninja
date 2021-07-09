@@ -2,7 +2,7 @@ import React from 'react'
 
 const Heading = ({ title, subtitle, size, highlight, className }) => {
     return (
-        <div className={`${className} flex flex-col`}>
+        <div className={`${className} flex flex-col transition_all`}>
             <span
                 className={`${
                     size === 3
