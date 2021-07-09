@@ -1,8 +1,16 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 import Button from '../Button'
 
-const InputBox = ({ buttonText, placeHolder, value, className }) => {
+const InputBox = ({
+    buttonText,
+    buttonPath,
+    placeHolder,
+    value,
+    className
+}) => {
+    const history = useHistory()
     const [inputValue, setInputValue] = React.useState()
 
     const handleInputChange = e => {
@@ -15,7 +23,7 @@ const InputBox = ({ buttonText, placeHolder, value, className }) => {
 
     return (
         <div
-            className={`${className} bg-white shadow-lg border border-gray-100 pr-4 my-6 rounded-full max-w-lg w-full flex items-center`}
+            className={`${className} bg-white shadow-lg border border-gray-100 pr-4 rounded-full max-w-lg w-full flex items-center`}
         >
             <input
                 className={`rounded-full focus:outline-none mr-2  ml-8 my-4 p-2 w-full flex-shrink-1 flex-1`}
@@ -28,6 +36,7 @@ const InputBox = ({ buttonText, placeHolder, value, className }) => {
                 className={`flex-shrink-0`}
                 text={buttonText}
                 reSize={true}
+                onClick={() => history.push(buttonPath)}
             />
         </div>
     )

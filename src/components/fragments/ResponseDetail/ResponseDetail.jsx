@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { ImArrowLeft2 } from 'react-icons/im'
 import FadeIn from 'react-fade-in/lib/FadeIn'
 
@@ -14,7 +14,7 @@ const ResponseDetail = () => {
     const history = useHistory()
     // const params = useParams()
     return (
-        <div className={`p-4`}>
+        <div className={`p-4 max-w-2xl mx-auto mt-16`}>
             <Button
                 text={data.responseDetail.buttonText}
                 type='secondary'
@@ -24,9 +24,7 @@ const ResponseDetail = () => {
                 onClick={() => history.goBack()}
                 className={`mt-6`}
             />
-            <div
-                className={`flex items-center justify-between my-6 max-w-2xl mx-auto`}
-            >
+            <div className={`flex items-center justify-between my-6`}>
                 <Heading title={responseList[0].designation} size={2} />
                 <Ranking score={responseList[0].score} size={30} />
             </div>
