@@ -1,12 +1,12 @@
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 
-import ResponseList from '../fragments/ResponseList'
-import ResponseDetail from '../fragments/ResponseDetail'
-import OptionsList from '../fragments/OptionsList'
+// import ResponseList from '../fragments/ResponseList'
+// import ResponseDetail from '../fragments/ResponseDetail'
+// import OptionsList from '../fragments/OptionsList'
 
-import { FiArrowLeft } from 'react-icons/fi'
+// import { FiArrowLeft } from 'react-icons/fi'
 
-import { homeData as data } from '../../appData'
+// import { homeData as data } from '../../appData'
 
 const Main = ({ className }) => {
     return (
