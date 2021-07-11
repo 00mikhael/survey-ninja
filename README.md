@@ -1,7 +1,5 @@
 # survey-ninja
 
-### Survey, like a ninja
-
 ## Screenshots
 
 ![App Screenshot](https://pbs.twimg.com/media/E54GQX_WQAcbHdT?format=jpg&name=large)
