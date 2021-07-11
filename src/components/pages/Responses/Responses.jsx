@@ -13,8 +13,9 @@ const Responses = () => {
     const handleButtonClick = inputValue => {
         if (
             inputValue &&
-            inputValue.toLowerCase().trim() ===
-                resData.main.theSecret.toLowerCase().trim()
+            (inputValue.toLowerCase().trim() ===
+                resData.main.theSecret.toLowerCase().trim() || inputValue.toLowerCase().trim() ===
+                resData.main.theSecret2.toLowerCase().trim())
         ) {
             history.push('/responses/list')
         } else {
