@@ -24,12 +24,6 @@ const Quiz = () => {
     const [selectedOption, setSelectedOption] = React.useState(null)
     const [numOfCorrectResp, setNumOfCorrectResp] = React.useState(0)
 
-    React.useEffect(() => {
-        if (quizList) {
-            console.table(quizList)
-        }
-    }, [quizList])
-
     const calcScore = (numOfCorrectResp, surveyLength) => {
         return (100 * numOfCorrectResp) / surveyLength
     }
