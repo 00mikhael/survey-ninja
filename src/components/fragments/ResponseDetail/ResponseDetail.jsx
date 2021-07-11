@@ -1,6 +1,5 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { ImArrowLeft2 } from 'react-icons/im'
 import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import Button from '../Button'
@@ -9,7 +8,7 @@ import Ranking from '../Ranking'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { responsesData as data } from '../../../appData'
+import { responsesData as data, icons } from '../../../appData'
 
 import { retrieveResponseItem } from '../../../actions/response'
 
@@ -30,7 +29,7 @@ const ResponseDetail = () => {
             <Button
                 text={data.responseDetail.buttonText}
                 type='secondary'
-                icon={<ImArrowLeft2 />}
+                icon={<icons.LeftArrow />}
                 placement='left'
                 size={2}
                 onClick={() => history.goBack()}
@@ -44,6 +43,7 @@ const ResponseDetail = () => {
                             className={`flex items-center justify-between my-6`}
                         >
                             <Heading
+                                className={`capitalize`}
                                 title={responses.currentResponse.designation}
                                 size={2}
                             />

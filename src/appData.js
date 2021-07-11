@@ -1,5 +1,5 @@
-import { ImArrowRight2, ImArrowLeft2 } from 'react-icons/im'
-import { CgMenuRight } from 'react-icons/cg'
+import { ImArrowRight2, ImArrowLeft2, ImHeart } from 'react-icons/im'
+import { GiNinjaHead } from 'react-icons/gi'
 
 export const appData = {
     name: 'Survey Ninja',
@@ -7,9 +7,10 @@ export const appData = {
 }
 
 export const icons = {
+    Logo: GiNinjaHead,
+    Heart: ImHeart,
     LeftArrow: ImArrowLeft2,
-    RightArrow: ImArrowRight2,
-    Menu: CgMenuRight
+    RightArrow: ImArrowRight2
 }
 
 export const rankings = [

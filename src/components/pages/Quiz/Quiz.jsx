@@ -16,7 +16,7 @@ const Quiz = () => {
     const dispatch = useDispatch()
     const { idx } = useParams()
     const history = useHistory()
-
+    const correctSelected = React.useRef(false)
     const [currentQuestion, setCurrentQuestion] = React.useState({
         index: null,
         data: null
@@ -55,10 +55,6 @@ const Quiz = () => {
             if (!selectedOption) {
                 return
             }
-            if (selectedOption === currentQuestion.data.correct_answer) {
-                setNumOfCorrectResp(num => num + 1)
-            }
-
             let resp = {
                 question: currentQuestion.data.question,
                 response: selectedOption,
@@ -67,16 +63,11 @@ const Quiz = () => {
             updateSurveyResponses(resp)
             let respObj = JSON.parse(localStorage.getItem('responseObj'))
             dispatch(saveResponse(respObj))
-            // localStorage.removeItem('responseObj')
-            setTimeout(() => {
-                history.push(`/quiz/result/ninja`)
-            }, 1000)
+            localStorage.removeItem('responseObj')
+            history.push(`/quiz/result/ninja`)
         } else {
             if (!selectedOption) {
                 return
-            }
-            if (selectedOption === currentQuestion.data.correct_answer) {
-                setNumOfCorrectResp(num => num + 1)
             }
             let resp = {
                 question: currentQuestion.data.question,
@@ -90,6 +81,17 @@ const Quiz = () => {
     }
 
     const handleOptionSelected = option => {
+        if (option === currentQuestion.data.correct_answer) {
+            if (!correctSelected.current) {
+                setNumOfCorrectResp(num => num + 1)
+            }
+            correctSelected.current = true
+        } else {
+            if (correctSelected.current) {
+                setNumOfCorrectResp(num => num - 1)
+            }
+            correctSelected.current = false
+        }
         setSelectedOption(option)
     }
 
@@ -116,6 +118,7 @@ const Quiz = () => {
             })
         }
         if (idx && quizList && quizList[idx]) {
+            correctSelected.current = false
             setCurrentQuestion({
                 index: idx,
                 data: quizList[idx]

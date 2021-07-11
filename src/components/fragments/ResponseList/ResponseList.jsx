@@ -38,7 +38,9 @@ const ResponseItem = ({ count, designation, score }) => {
             to={`/responses/list/${designation.toLowerCase()}`}
             className={`flex-grow max-w-lg w-full h-auto shadow-lg hover:shadow-md rounded-lg border border-gray-100 overflow-hidden my-2 sm:my-0 mx-auto p-6 bg-white text-lg flex items-center justify-between`}
         >
-            <span className={`font-bold`}>{`${count}. ${designation}`}</span>
+            <span
+                className={`font-bold capitalize`}
+            >{`${count}. ${designation}`}</span>
             <Ranking score={score} />
         </Link>
     )

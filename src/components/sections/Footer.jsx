@@ -1,7 +1,6 @@
 import React from 'react'
-import { ImHeart } from 'react-icons/im'
 
-import { appData } from '../../appData'
+import { appData, icons } from '../../appData'
 
 const Footer = ({ className }) => {
     return (
@@ -11,7 +10,8 @@ const Footer = ({ className }) => {
             <small
                 className={` bg-white max-w-xs w-full text-sm text-center p-4 rounded-lg`}
             >
-                All <ImHeart className={`inline-block text-rose-600`} /> from{' '}
+                All <icons.Heart className={`inline-block text-rose-600`} />{' '}
+                from{' '}
                 <a
                     className={`text-rose-600`}
                     href='https://github.com/00mikhael/survey-ninja'
