@@ -79,6 +79,7 @@ export const responsesData = {
         subtitle: "the secret is that i'm a ninja",
         inputPlaceholder: 'What’s the secret',
         theSecret: "i'm a ninja",
+        theSecret2: "i’m a ninja",
         buttonText: 'Let’s Go!'
     },
     responseList: {
