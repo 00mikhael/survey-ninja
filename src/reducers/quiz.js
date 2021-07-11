@@ -1,15 +1,15 @@
-import { RETRIEVE_QUIZZES } from '../actions/type'
+import { RETRIEVE_QUIZ_LIST } from '../actions/type'
 
 const initialState = null
 
-const quizReducer = (quizzes = initialState, action) => {
+const quizReducer = (quizList = initialState, action) => {
     const { type, payload } = action
 
     switch (type) {
-        case RETRIEVE_QUIZZES:
+        case RETRIEVE_QUIZ_LIST:
             return payload
         default:
-            return quizzes
+            return quizList
     }
 }
 

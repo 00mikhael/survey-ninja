@@ -1,15 +1,26 @@
 import React from 'react'
 import FadeIn from 'react-fade-in/lib/FadeIn'
 
-import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { responsesData as resData } from '../../../appData'
 import Heading from '../../fragments/Heading'
 import InputBox from '../../fragments/InputBox'
 
 const Responses = () => {
-    const quizzes = useSelector(state => state.quizzes)
-    console.log(quizzes)
+    const history = useHistory()
+
+    const handleButtonClick = inputValue => {
+        if (
+            inputValue &&
+            inputValue.toLowerCase().trim() ===
+                resData.main.theSecret.toLowerCase().trim()
+        ) {
+            history.push('/responses/list')
+        } else {
+            alert('Try again')
+        }
+    }
     return (
         <React.Fragment>
             <FadeIn className={`mt-16 mb-8 mx-6`}>
@@ -20,8 +31,8 @@ const Responses = () => {
                 />
                 <InputBox
                     buttonText={resData.main.buttonText}
-                    buttonPath={`/responses/list`}
                     placeHolder={resData.main.inputPlaceholder}
+                    onButtonClick={handleButtonClick}
                 />
             </FadeIn>
         </React.Fragment>

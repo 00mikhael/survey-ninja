@@ -1,28 +1,27 @@
 import React from 'react'
 import FadeIn from 'react-fade-in/lib/FadeIn'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import Heading from '../Heading'
 import Ranking from '../Ranking'
 
-import {
-    responsesData as data,
-    mockResponseData as list
-} from '../../../appData'
+import { responsesData as data } from '../../../appData'
 
 const ResponseList = () => {
+    const responses = useSelector(state => state.responses)
     let count = 0
     return (
         <FadeIn
             className={`list flex flex-col justify-center  w-full space-y-4 mt-16 p-4 max-w-lg mx-auto`}
         >
             <Heading title={data.responseList.title} size={3} />
-            {list &&
-                list.map(item => {
+            {responses.responseList &&
+                responses.responseList.map(item => {
                     count++
                     return (
                         <ResponseItem
-                            key={item.id}
+                            key={item._id}
                             count={count}
                             designation={item.designation}
                             score={item.score}

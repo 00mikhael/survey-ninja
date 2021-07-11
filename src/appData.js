@@ -53,14 +53,17 @@ export const homeData = {
     },
     instructions: {
         title: 'Instructions',
-        subtitle: 'category:',
+        subtitle: 'Read the instructions carefully',
         message: 'Welcome',
-        buttonText: 'Begin Survey'
+        buttonText: 'Begin Survey',
+        instruction:
+            'Professionally engineer distributed experiences for frictionless action items. Conveniently customize front-end catalysts for change after intuitive web services. Continually integrate interdependent outsourcing through technically sound users. okay proceed.'
     }
 }
 
 export const quizData = {
     main: {
+        prevButtonText: 'Prev',
         nextButtonText: 'Next',
         submitButtonText: 'Submit'
     },
@@ -72,8 +75,9 @@ export const quizData = {
 export const responsesData = {
     main: {
         title: 'Responses',
-        subtitle: 'the secret is that i’m a ninja',
+        subtitle: "the secret is that i'm a ninja",
         inputPlaceholder: 'What’s the secret',
+        theSecret: "i'm a ninja",
         buttonText: 'Let’s Go!'
     },
     responseList: {
@@ -89,267 +93,3 @@ export const responsesData = {
         }
     }
 }
-
-export const mockQuizData = {
-    results: [
-        {
-            category: 'Vehicles',
-            type: 'multiple',
-            difficulty: 'medium',
-            question:
-                'Which of the following is NOT a Russian car manufacturer?',
-            correct_answer: 'BYD',
-            incorrect_answers: ['Silant', 'Dragon', 'GAZ']
-        },
-        {
-            category: 'Vehicles',
-            type: 'multiple',
-            difficulty: 'easy',
-            question:
-                'Which of the following car manufacturers had a war named after it?',
-            correct_answer: 'Toyota',
-            incorrect_answers: ['Honda', 'Ford', 'Volkswagen']
-        }
-    ]
-}
-
-export const mockResponseData = [
-    {
-        '_id': '60e8127688f235049b4b610f',
-        'designation': 'Ninja',
-        'score': 61,
-        'ninjaResponses': [
-            {
-                '_id': '60e8127688f235049b4b6110',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6111',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6112',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6113',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            }
-        ],
-        'createdAt': '2021-07-09T09:10:14.361Z',
-        'updatedAt': '2021-07-09T09:10:14.361Z',
-        '__v': 0
-    },
-    {
-        '_id': '60e8127688f235049b4b610f',
-        'designation': 'Ninja',
-        'score': 91,
-        'ninjaResponses': [
-            {
-                '_id': '60e8127688f235049b4b6110',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6111',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6112',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6113',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            }
-        ],
-        'createdAt': '2021-07-09T09:10:14.361Z',
-        'updatedAt': '2021-07-09T09:10:14.361Z',
-        '__v': 0
-    },
-    {
-        '_id': '60e8127688f235049b4b610f',
-        'designation': 'Ninja',
-        'score': 61,
-        'ninjaResponses': [
-            {
-                '_id': '60e8127688f235049b4b6110',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6111',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6112',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6113',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            }
-        ],
-        'createdAt': '2021-07-09T09:10:14.361Z',
-        'updatedAt': '2021-07-09T09:10:14.361Z',
-        '__v': 0
-    },
-    {
-        '_id': '60e8127688f235049b4b610f',
-        'designation': 'Ninja',
-        'score': 61,
-        'ninjaResponses': [
-            {
-                '_id': '60e8127688f235049b4b6110',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6111',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6112',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6113',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            }
-        ],
-        'createdAt': '2021-07-09T09:10:14.361Z',
-        'updatedAt': '2021-07-09T09:10:14.361Z',
-        '__v': 0
-    },
-    {
-        '_id': '60e8127688f235049b4b610f',
-        'designation': 'Ninja',
-        'score': 61,
-        'ninjaResponses': [
-            {
-                '_id': '60e8127688f235049b4b6110',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6111',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6112',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6113',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            }
-        ],
-        'createdAt': '2021-07-09T09:10:14.361Z',
-        'updatedAt': '2021-07-09T09:10:14.361Z',
-        '__v': 0
-    },
-    {
-        '_id': '60e8127688f235049b4b610f',
-        'designation': 'Ninja',
-        'score': 61,
-        'ninjaResponses': [
-            {
-                '_id': '60e8127688f235049b4b6110',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6111',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6112',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6113',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            }
-        ],
-        'createdAt': '2021-07-09T09:10:14.361Z',
-        'updatedAt': '2021-07-09T09:10:14.361Z',
-        '__v': 0
-    },
-    {
-        '_id': '60e8127688f235049b4b610f',
-        'designation': 'Ninja',
-        'score': 61,
-        'ninjaResponses': [
-            {
-                '_id': '60e8127688f235049b4b6110',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6111',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6112',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            },
-            {
-                '_id': '60e8127688f235049b4b6113',
-                'question': 'what is who',
-                'response': 'who is who',
-                'correctAnswer': 'very good'
-            }
-        ],
-        'createdAt': '2021-07-09T09:10:14.361Z',
-        'updatedAt': '2021-07-09T09:10:14.361Z',
-        '__v': 0
-    }
-]

@@ -1,12 +1,12 @@
-import { RETRIEVE_QUIZZES } from './type'
+import { RETRIEVE_QUIZ_LIST } from './type'
 
 import QuizService from '../services/quiz'
 
-export const retrieveQuizzes = () => async dispatch => {
+export const retrieveQuizList = () => async dispatch => {
     try {
-        const res = await QuizService.retrieveAll()
+        const res = await QuizService.retrieveQuizList()
         dispatch({
-            type: RETRIEVE_QUIZZES,
+            type: RETRIEVE_QUIZ_LIST,
             payload: res.data.results
         })
     } catch (err) {

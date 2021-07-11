@@ -7,7 +7,17 @@ import Header from './components/sections/Header'
 import Main from './components/sections/Main'
 import Footer from './components/sections/Footer'
 
+import { useDispatch } from 'react-redux'
+import { retrieveQuizList } from './actions/quiz'
+import { retrieveResponseList } from './actions/response'
+
 function App() {
+    const dispatch = useDispatch()
+    React.useEffect(() => {
+        dispatch(retrieveQuizList())
+        dispatch(retrieveResponseList())
+        // eslint-disable-next-line
+    }, [])
     return (
         <Router>
             <Base className={`flex flex-col px-4`}>

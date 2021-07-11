@@ -4,10 +4,10 @@ import Heading from '../Heading'
 const Question = ({ text, number }) => {
     return (
         <div className={`max-w-2xl`}>
-            <div className={`flex items-start space-x-2`}>
+            <div className={`flex items-baseline space-x-1`}>
                 <Heading title={`Question`} size={3} />
                 <div
-                    className={`bg-rose-500 text-white w-8 h-8 rounded-lg font-bold text-2xl flex justify-center items-center`}
+                    className={`bg-rose-500 text-white w-6 h-6 rounded-lg font-bold text-lg flex justify-center items-center`}
                 >
                     {number}
                 </div>

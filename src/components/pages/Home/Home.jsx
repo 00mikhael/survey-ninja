@@ -3,7 +3,7 @@ import { Route, useHistory } from 'react-router-dom'
 import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import { useDispatch } from 'react-redux'
-import { retrieveQuizzes } from '../../../actions/quiz'
+import { retrieveResponseItem } from '../../../actions/response'
 
 import { homeData, icons } from '../../../appData'
 import Heading from '../../fragments/Heading'
@@ -12,13 +12,43 @@ import Message from '../../fragments/Message'
 import Button from '../../fragments/Button'
 
 const Home = () => {
-    const history = useHistory()
     const dispatch = useDispatch()
+    const [sessionRespObj, setSessionRespObj] = React.useState()
+    const history = useHistory()
 
     React.useEffect(() => {
-        dispatch(retrieveQuizzes())
-        // eslint-disable-next-line
+        let respObj = JSON.parse(localStorage.getItem('responseObj'))
+        if (respObj) {
+            setSessionRespObj(respObj)
+        }
     }, [])
+
+    const handleHomeButtonClick = inputValue => {
+        let designation = inputValue.toLowerCase()
+        if (designation) {
+            dispatch(retrieveResponseItem(designation))
+                .then(({ data }) => {
+                    history.push(`/quiz/result/${data.designation}`)
+                })
+                .catch(err => {
+                    let respObj = {
+                        designation,
+                        score: 0,
+                        surveyResponses: [],
+                        respCount: 0
+                    }
+                    setSessionRespObj(respObj)
+                    localStorage.setItem('responseObj', JSON.stringify(respObj))
+                    if (err?.response?.status === 404) {
+                        history.push('/instructions')
+                    }
+                })
+        }
+    }
+
+    const handleInstructionsButtonClick = () => {
+        history.push('/quiz')
+    }
 
     return (
         <React.Fragment>
@@ -34,29 +64,31 @@ const Home = () => {
                         buttonText={homeData.home.buttonText}
                         buttonPath={`/instructions`}
                         placeHolder={homeData.home.inputPlaceholder}
+                        defaultValue={`RandomNinja-${Date.now()
+                            .toString()
+                            .slice(8, 13)}`}
+                        onButtonClick={handleHomeButtonClick}
                         className={`mt-4`}
                     />
                 </FadeIn>
             </Route>
             <Route exact path={['/instructions']}>
                 <FadeIn className={`mt-16 mb-8 mx-6`}>
-                    <Message name={`Michael`} />
+                    {sessionRespObj && (
+                        <Message name={sessionRespObj.designation} />
+                    )}
                     <Heading
                         title={homeData.instructions.title}
-                        subtitle={homeData.instructions.subtitle + ' Vehicles'}
+                        subtitle={homeData.instructions.subtitle}
                     />
                     <p className={`my-6 max-w-xl`}>
-                        Professionally engineer distributed experiences for
-                        frictionless action items. Conveniently customize
-                        front-end catalysts for change after intuitive web
-                        services. Continually integrate interdependent
-                        outsourcing through technically sound users.
+                        {homeData.instructions.instruction}
                     </p>
                     <Button
                         text={homeData.instructions.buttonText}
                         icon={<icons.RightArrow />}
                         placement='right'
-                        onClick={() => history.push('/quiz')}
+                        onClick={handleInstructionsButtonClick}
                     />
                 </FadeIn>
             </Route>

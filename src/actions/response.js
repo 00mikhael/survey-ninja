@@ -1,9 +1,8 @@
 import {
     SAVE_RESPONSE,
-    RETRIEVE_RESPONSES,
-    RETRIEVE_RESPONSE,
-    UPDATE_RESPONSE
-} from './types'
+    RETRIEVE_RESPONSE_LIST,
+    RETRIEVE_RESPONSE_ITEM
+} from './type'
 
 import ResponseService from '../services/response'
 
@@ -21,42 +20,36 @@ export const saveResponse = response => async dispatch => {
     }
 }
 
-export const retrieveResponse = designation => async dispatch => {
+export const retrieveResponseItem = designation => async dispatch => {
     dispatch({
-        type: RETRIEVE_RESPONSE,
-        payload: { designation, data: null }
+        type: RETRIEVE_RESPONSE_ITEM,
+        payload: {
+            designation
+        }
     })
     try {
         const res = await ResponseService.getByDesignation(designation)
         dispatch({
-            type: RETRIEVE_RESPONSE,
+            type: RETRIEVE_RESPONSE_ITEM,
             payload: {
                 designation,
                 data: res.data
             }
         })
-
         return Promise.resolve(res)
     } catch (err) {
         return Promise.reject(err)
     }
 }
 
-export const retrieveResponses = () => async dispatch => {
+export const retrieveResponseList = () => async dispatch => {
     try {
-        const res = await ResponseService.retrieveAll()
+        const res = await ResponseService.retrieveResponseList()
         dispatch({
-            type: RETRIEVE_RESPONSES,
+            type: RETRIEVE_RESPONSE_LIST,
             payload: res.data.responseList
         })
     } catch (err) {
         console.log(err)
     }
-}
-
-export const updateResponse = data => async dispatch => {
-    dispatch({
-        type: UPDATE_RESPONSE,
-        payload: { data }
-    })
 }
